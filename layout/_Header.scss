@@ -1,0 +1,122 @@
+.Header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: transparent;
+    z-index: 1000;
+    color: #fff;
+    transition: 0.5s;
+
+    &.on {
+        background: $primary-color;
+
+        .TopBar {
+            height: 0;
+            opacity: 0;
+            transition: 0.5s;
+        }
+
+        .main_menu a {
+            text-shadow: none;
+        }
+
+        .sch_area {
+            .person {
+                display: block;
+            }
+        }
+    }
+
+    .header_wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100px;
+
+
+        h1 {
+            width: 120px;
+        }
+
+        .Gnb {
+            position: relative;
+
+
+            .main_menu {
+                display: flex;
+                font-size: 24px;
+
+                li {
+                    a {
+                        line-height: 100px;
+                        @include shadow();
+                    }
+                }
+
+                li~li {
+                    margin: 0 0 0 80px;
+                }
+
+                li:hover .sub_menu {
+                    display: block;
+                }
+
+                .sub_menu {
+                    position: absolute;
+                    top: 85%;
+                    display: none;
+                    background: #fff;
+                    color: $body-color;
+                    width: 240px;
+                    padding: 0 0 20px 0;
+                    border-radius: 10px;
+                    box-shadow: 0 10px 30px rgba($color: #999, $alpha: 0.1);
+
+                    p {
+                        font-size: 14px;
+                        color: $light-color;
+                        padding: 24px 0 8px 15px;
+                    }
+
+                    li {
+                        font-size: 16px;
+                        margin: 0;
+                        padding: 0 0 0 24px;
+
+                        :hover {
+                            color: $primary-color;
+                            transition: 0.3s;
+                        }
+
+                        a {
+                            line-height: 3;
+                            text-shadow: none;
+                        }
+                    }
+                }
+            }
+        }
+
+        .sch_area {
+            span {
+                font-size: 28px;
+                font-weight: 200;
+            }
+
+            .person {
+                display: none;
+            }
+
+            .search {
+                margin: 0 0 0 20px;
+            }
+
+            .share {
+                margin: 0 20px;
+            }
+
+
+        }
+    }
+}

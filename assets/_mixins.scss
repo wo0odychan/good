@@ -1,0 +1,14 @@
+@mixin section() {
+    padding: 100px 0;
+}
+
+@mixin position-center() {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin shadow() {
+    text-shadow: 0 0 4px rgba($color: #000000, $alpha: 0.2);
+}

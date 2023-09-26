@@ -1,0 +1,41 @@
+.FullMenu {
+    position: fixed;
+    display: none;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: $menu-color;
+    height: 100vh;
+
+    &.on {
+        display: block;
+    }
+
+    .inner {
+        h2 {
+            font-size: 48px;
+            padding: 10px 0;
+            margin: 0 0 40px 0;
+            border-bottom: 1px solid #fff;
+        }
+
+        .content {
+            display: flex;
+
+            &>* {
+                flex: 1;
+            }
+
+            .itm {
+                p {
+                    font-size: 14px;
+                }
+
+                strong {
+                    font-size: 28px;
+                }
+            }
+        }
+    }
+
+}

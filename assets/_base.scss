@@ -1,0 +1,36 @@
+// * {
+//     outline: 1px solid salmon;
+// }
+
+body {
+    color: $body-color;
+}
+
+.sec {
+    @include section;
+}
+
+.inner {
+    max-width: $default-size;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.h_inner {
+    max-width: $header-size;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.d_flex {
+    display: flex;
+    gap: 30px;
+}
+
+.nt {
+    font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+}
+
+.pt {
+    font-family: 'Jua', sans-serif;
+}
