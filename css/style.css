@@ -3,11 +3,11 @@ body {
 }
 
 .sec {
-  padding: 100px 0;
+  padding: 150px 0;
 }
 
 .inner {
-  max-width: 1440px;
+  max-width: 1540px;
   margin: 0 auto;
   padding: 0 15px;
 }
@@ -23,12 +23,17 @@ body {
   gap: 30px;
 }
 
-.nt {
-  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+.btn {
+  display: inline-block;
+  background: #82CDDB;
+  padding: 12px 26px;
+  border-radius: 35px;
 }
-
-.pt {
-  font-family: "Jua", sans-serif;
+.btn.g {
+  background: #53B5B0;
+}
+.btn.p {
+  background: #B4B4DC;
 }
 
 .Header {
@@ -40,6 +45,7 @@ body {
   z-index: 1000;
   color: #fff;
   transition: 0.5s;
+  border-bottom: 1px solid #fff;
 }
 .Header.on {
   background: #82CDDB;
@@ -47,7 +53,6 @@ body {
 .Header.on .TopBar {
   height: 0;
   opacity: 0;
-  transition: 0.5s;
 }
 .Header.on .main_menu a {
   text-shadow: none;
@@ -70,6 +75,7 @@ body {
 .Header .header_wrap .Gnb .main_menu {
   display: flex;
   font-size: 24px;
+  font-family: "Jua", sans-serif;
 }
 .Header .header_wrap .Gnb .main_menu li a {
   line-height: 100px;
@@ -86,6 +92,7 @@ body {
   top: 85%;
   display: none;
   background: #fff;
+  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
   color: #000;
   width: 240px;
   padding: 0 0 20px 0;
@@ -113,6 +120,7 @@ body {
 .Header .header_wrap .sch_area span {
   font-size: 28px;
   font-weight: 200;
+  cursor: pointer;
 }
 .Header .header_wrap .sch_area .person {
   display: none;
@@ -129,12 +137,9 @@ body {
   justify-content: flex-end;
   align-items: center;
   overflow: hidden;
-  padding: 0 55px;
+  padding: 0 50px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-}
-.TopBar.on {
-  height: 0;
-  transition: height 0.4s;
+  transition: 0.5s;
 }
 .TopBar .sns {
   font-size: 24px;
@@ -165,31 +170,501 @@ body {
 
 .FullMenu {
   position: fixed;
-  display: none;
   top: 0;
   left: 0;
   right: 0;
+  transform: translate(100%, 0);
   background: #61C1D3;
   height: 100vh;
+  width: 100%;
+  transition: 0.5s;
 }
 .FullMenu.on {
-  display: block;
+  transform: translate(0, 0);
+}
+.FullMenu .inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
 }
 .FullMenu .inner h2 {
+  font-family: "Jua", sans-serif;
   font-size: 48px;
   padding: 10px 0;
-  margin: 0 0 40px 0;
-  border-bottom: 1px solid #fff;
+  margin: 0 0 56px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 .FullMenu .inner .content {
   display: flex;
+  justify-content: space-between;
 }
 .FullMenu .inner .content > * {
   flex: 1;
 }
 .FullMenu .inner .content .itm p {
-  font-size: 14px;
+  font-size: 12px;
+  font-weight: 200;
+  margin: 0 0 8px 0;
 }
 .FullMenu .inner .content .itm strong {
+  display: block;
   font-size: 28px;
+  font-family: "Jua", sans-serif;
+  margin: 0 0 40px 0;
+}
+.FullMenu .inner .content .itm dl dt {
+  line-height: 2.5;
+  font-size: 16px;
+  font-weight: 300;
+  margin: 24px 0 0 0;
+}
+.FullMenu .inner .content .itm dl dd {
+  display: block;
+  line-height: 2.2;
+  font-size: 14px;
+  font-weight: 100;
+  padding: 0 0 0 28px;
+}
+.FullMenu .inner .content .itm dl dd a {
+  position: relative;
+}
+.FullMenu .inner .content .itm dl dd a::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  margin: 0 0 0 -16px;
+  width: 5px;
+  height: 1px;
+  background: #fff;
+  z-index: 999;
+}
+.FullMenu .inner .content .itm dl dd a:hover {
+  font-weight: 400;
+  transition: 0.2s;
+}
+.FullMenu .inner .content .itm dl dd a:hover::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(0, -50%);
+  margin: 0 -16px 0 0;
+  width: 4px;
+  height: 4px;
+  background: #fff;
+  border-radius: 50%;
+  z-index: 999;
+  opacity: 1;
+}
+.FullMenu .inner .close {
+  position: fixed;
+  top: 5%;
+  right: 5%;
+  font-size: 28px;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.FullMenu .inner .close i {
+  padding: 32px;
+}
+
+.MainVisual {
+  position: relative;
+  overflow: hidden;
+}
+.MainVisual video {
+  height: 100vh;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.MainVisual .scroll {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+.MainVisual .scroll p {
+  position: relative;
+  font-weight: 600;
+  color: #fff;
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+}
+.MainVisual .scroll p::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 32px;
+  height: 45px;
+  margin: 0 0 -56px 0;
+  border: 2px solid #fff;
+  border-radius: 20px;
+}
+.MainVisual .scroll::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 2px;
+  height: 8px;
+  margin: 0 0 -25px 0;
+  background: #fff;
+  border-radius: 20px;
+  animation: scr 2s infinite;
+  opacity: 0;
+}
+
+@keyframes scr {
+  0% {
+    margin: 0 0 -25px 0;
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    margin: 0 0 -60px 0;
+  }
+}
+.MainContent {
+  overflow: hidden;
+}
+.MainContent .content .tit {
+  margin: 0 0 64px 0;
+}
+.MainContent .content .tit h2 {
+  font-family: "Jua", sans-serif;
+  font-size: 52px;
+  margin: 0 0 28px 0;
+  font-weight: 600;
+}
+.MainContent .content .tit p {
+  font-size: 18px;
+  line-height: 1.7;
+  font-weight: 300;
+}
+.MainContent .content .tab {
+  height: 500px;
+}
+.MainContent .content .tab .tab_menu {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 0 0 28px;
+}
+.MainContent .content .tab .tab_menu::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(0, -50%);
+  width: 1px;
+  height: 320px;
+  background: #ddd;
+}
+.MainContent .content .tab .tab_menu li {
+  position: relative;
+  width: 150px;
+  line-height: 48px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+.MainContent .content .tab .tab_menu li.pt {
+  font-family: "Jua", sans-serif;
+}
+.MainContent .content .tab .tab_menu li::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(0, -50%);
+  margin: 0 0 0 -32px;
+  width: 10px;
+  height: 10px;
+  background: #82CDDB;
+  border: 0px solid #fff;
+  border-radius: 50%;
+  transition: 0.3s;
+  z-index: 2;
+}
+.MainContent .content .tab .tab_menu li::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(-50%, -50%);
+  margin: 0 0 0 -27px;
+  width: 0;
+  height: 0;
+  background: #B4E1E9;
+  border-radius: 50%;
+  opacity: 0;
+  transition: 0.5s;
+}
+.MainContent .content .tab .tab_menu li.on {
+  color: #82CDDB;
+}
+.MainContent .content .tab .tab_menu li.on::before {
+  border: 1px solid #fff;
+}
+.MainContent .content .tab .tab_menu li.on::after {
+  width: 26px;
+  height: 26px;
+  opacity: 1;
+}
+.MainContent .content .tab .tab_slide {
+  overflow: hidden;
+}
+.MainContent .content .tab .tab_slide .itm {
+  display: flex;
+  justify-content: space-between;
+}
+.MainContent .content .tab .tab_slide .itm .left {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 590px;
+  margin: 0 0 0 80px;
+}
+.MainContent .content .tab .tab_slide .itm .left strong {
+  display: block;
+  font-family: "Jua", sans-serif;
+  font-size: 36px;
+  font-weight: 500;
+  margin: 0 0 4px 0;
+}
+.MainContent .content .tab .tab_slide .itm .left p {
+  line-height: 1.5;
+  margin: 0 0 4px 0;
+}
+.MainContent .content .tab .tab_slide .itm .left .icon {
+  display: flex;
+  align-items: center;
+}
+.MainContent .content .tab .tab_slide .itm .left .icon h3 {
+  font-size: 20px;
+  line-height: 1.5;
+  font-family: "Jua", sans-serif;
+}
+.MainContent .content .tab .tab_slide .itm .left .icon p {
+  margin: 0;
+}
+.MainContent .content .tab .tab_slide .itm .left .icon figure {
+  margin: 0 24px 0 0;
+}
+.MainContent .content .tab .tab_slide .itm .right img {
+  width: 600px;
+  border-radius: 25px;
+}
+
+.Introduce {
+  position: relative;
+}
+.Introduce::before {
+  content: "";
+  position: absolute;
+  top: -15%;
+  left: -40%;
+  width: 100%;
+  height: 100vh;
+  background: radial-gradient(circle, rgba(130, 205, 219, 0.3) 2%, rgb(255, 255, 255) 45%, rgb(255, 255, 255) 100%);
+  z-index: -1;
+}
+.Introduce .content {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+}
+.Introduce .content figure {
+  width: 550px;
+  margin: 0 120px 0 0;
+}
+.Introduce .content figure img {
+  border-radius: 25px;
+}
+.Introduce .content figcaption {
+  width: 600px;
+  margin: 8px 0 0 0;
+}
+.Introduce .content figcaption strong {
+  display: block;
+  font-family: "Jua", sans-serif;
+  color: #82CDDB;
+  margin: 0 0 18px 0;
+}
+.Introduce .content figcaption h2 {
+  font-family: "Jua", sans-serif;
+  font-size: 40px;
+  line-height: 1.3;
+  width: 340px;
+  margin: 0 0 18px 0;
+}
+.Introduce .content figcaption p {
+  font-weight: 300;
+  line-height: 1.4;
+  margin: 0 0 36px 0;
+}
+.Introduce .content figcaption .owner {
+  display: flex;
+}
+.Introduce .content figcaption .owner p {
+  margin: 0 8px 0 0;
+  font-size: 18px;
+  font-weight: 500;
+}
+.Introduce .content figcaption .owner p.bold {
+  font-weight: 800;
+}
+
+.MainSolution .tit {
+  margin: 0 0 64px 0;
+}
+.MainSolution .tit h2 {
+  font-family: "Jua", sans-serif;
+  font-size: 52px;
+  margin: 0 0 28px 0;
+  font-weight: 600;
+}
+.MainSolution .tit p {
+  font-size: 18px;
+  line-height: 1.7;
+  font-weight: 300;
+  width: 450px;
+}
+.MainSolution .box {
+  display: grid;
+  grid-template-columns: repeat(3, 350px);
+  justify-content: center;
+  gap: 30px;
+}
+.MainSolution .box .blue {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #82CDDB;
+  padding: 40px 35px;
+  border-radius: 15px;
+}
+.MainSolution .box .blue .txt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+}
+.MainSolution .box .blue .txt span {
+  font-family: "Jua", sans-serif;
+  font-size: 36px;
+  margin: 0 0 28px 0;
+}
+.MainSolution .box .blue .txt strong {
+  display: block;
+  font-size: 28px;
+  font-weight: 100;
+  font-family: "Jua", sans-serif;
+  line-height: 1.4;
+  width: 250px;
+  margin: 0 0 140px 0;
+}
+.MainSolution .box .blue .txt p {
+  padding: 16px 0;
+  font-weight: 200;
+  border: 1px solid #fff;
+  border-radius: 10px;
+  width: 100%;
+}
+.MainSolution .box .blue:hover .cover {
+  opacity: 1;
+}
+.MainSolution .box .green {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #53B5B0;
+  padding: 40px 35px;
+  border-radius: 15px;
+}
+.MainSolution .box .green .txt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+}
+.MainSolution .box .green .txt span {
+  font-family: "Jua", sans-serif;
+  font-size: 36px;
+  margin: 0 0 28px 0;
+}
+.MainSolution .box .green .txt strong {
+  display: block;
+  font-size: 28px;
+  font-weight: 100;
+  font-family: "Jua", sans-serif;
+  line-height: 1.4;
+  width: 300px;
+  margin: 0 0 140px 0;
+}
+.MainSolution .box .green .txt p {
+  padding: 16px 0;
+  font-weight: 200;
+  border: 1px solid #fff;
+  border-radius: 10px;
+  width: 100%;
+}
+.MainSolution .box .green:hover .cover {
+  opacity: 1;
+}
+.MainSolution .cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 40px 25px;
+  border-radius: 15px;
+  transition: 0.3s;
+  opacity: 0;
+}
+.MainSolution .cover._b {
+  background: #82CDDB;
+}
+.MainSolution .cover._g {
+  background: #53B5B0;
+}
+.MainSolution .cover .q {
+  display: flex;
+  color: #fff;
+  font-size: 18px;
+  line-height: 1.4;
+  margin: 0 0 52px 0;
+}
+.MainSolution .cover .q span {
+  font-size: 24px;
+  margin: 0 16px 0 0;
+}
+.MainSolution .cover .q p {
+  padding: 8px 0 0 0;
+}
+.MainSolution .cover .a {
+  display: flex;
+  color: #115561;
+  font-size: 18px;
+  line-height: 1.4;
+}
+.MainSolution .cover .a span {
+  font-size: 24px;
+  margin: 0 16px 0 0;
+}
+.MainSolution .cover .a p {
+  padding: 8px 0 0 0;
 }/*# sourceMappingURL=style.css.map */

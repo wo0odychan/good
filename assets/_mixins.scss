@@ -1,5 +1,5 @@
 @mixin section() {
-    padding: 100px 0;
+    padding: 150px 0;
 }
 
 @mixin position-center() {
@@ -11,4 +11,12 @@
 
 @mixin shadow() {
     text-shadow: 0 0 4px rgba($color: #000000, $alpha: 0.2);
+}
+
+@mixin jua() {
+    font-family: 'Jua', sans-serif;
+}
+
+@mixin pre() {
+    font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
 }

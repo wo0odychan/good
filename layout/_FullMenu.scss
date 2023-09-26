@@ -1,26 +1,36 @@
 .FullMenu {
     position: fixed;
-    display: none;
     top: 0;
     left: 0;
     right: 0;
+    transform: translate(100%, 0);
     background: $menu-color;
     height: 100vh;
+    width: 100%;
+    transition: 0.5s;
 
     &.on {
-        display: block;
+        transform: translate(0, 0);
+
     }
 
     .inner {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100vh;
+
         h2 {
+            @include jua();
             font-size: 48px;
             padding: 10px 0;
-            margin: 0 0 40px 0;
-            border-bottom: 1px solid #fff;
+            margin: 0 0 56px 0;
+            border-bottom: 1px solid rgba($color: #fff, $alpha: 0.2);
         }
 
         .content {
             display: flex;
+            justify-content: space-between;
 
             &>* {
                 flex: 1;
@@ -28,12 +38,91 @@
 
             .itm {
                 p {
-                    font-size: 14px;
+                    font-size: 12px;
+                    font-weight: 200;
+                    margin: 0 0 8px 0;
                 }
 
                 strong {
+                    display: block;
                     font-size: 28px;
+                    @include jua();
+                    margin: 0 0 40px 0;
                 }
+
+                dl {
+                    dt {
+                        line-height: 2.5;
+                        font-size: 16px;
+                        font-weight: 300;
+                        margin: 24px 0 0 0;
+                    }
+
+                    dd {
+                        display: block;
+                        line-height: 2.2;
+                        font-size: 14px;
+                        font-weight: 100;
+                        padding: 0 0 0 28px;
+
+                        a {
+                            position: relative;
+
+                            &::before {
+                                content: "";
+                                position: absolute;
+                                top: 50%;
+                                left: 0;
+                                margin: 0 0 0 -16px;
+                                width: 5px;
+                                height: 1px;
+                                background: #fff;
+                                z-index: 999;
+                            }
+
+
+                            &:hover {
+                                font-weight: 400;
+                                transition: 0.2s;
+
+                                &::after {
+                                    content: "";
+                                    position: absolute;
+                                    top: 50%;
+                                    right: 0;
+                                    transform: translate(0, -50%);
+                                    margin: 0 -16px 0 0;
+                                    width: 4px;
+                                    height: 4px;
+                                    background: #fff;
+                                    border-radius: 50%;
+                                    z-index: 999;
+                                    opacity: 1;
+                                }
+
+                            }
+
+
+                        }
+                    }
+
+
+                }
+            }
+
+        }
+
+        .close {
+            position: fixed;
+            top: 5%;
+            right: 5%;
+            font-size: 28px;
+            border: 1px solid #fff;
+            border-radius: 50%;
+            cursor: pointer;
+
+            i {
+                padding: 32px;
             }
         }
     }

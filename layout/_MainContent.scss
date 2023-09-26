@@ -1,0 +1,160 @@
+.MainContent {
+    overflow: hidden;
+
+    .content {
+
+        .tit {
+            margin: 0 0 64px 0;
+
+            h2 {
+                @include jua();
+                font-size: 52px;
+                margin: 0 0 28px 0;
+                font-weight: 600;
+            }
+
+            p {
+                font-size: 18px;
+                line-height: 1.7;
+                font-weight: 300;
+            }
+        }
+
+        .tab {
+            height: 500px;
+
+            .tab_menu {
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 0 0 0 28px;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    left: 0;
+                    transform: translate(0, -50%);
+                    width: 1px;
+                    height: 320px;
+                    background: #ddd;
+                }
+
+                li {
+                    position: relative;
+                    width: 150px;
+                    line-height: 48px;
+                    font-weight: 500;
+                    transition: 0.3s;
+
+                    &.pt {
+                        @include jua();
+                    }
+
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        top: 50%;
+                        left: 0;
+                        transform: translate(0, -50%);
+                        margin: 0 0 0 -32px;
+                        width: 10px;
+                        height: 10px;
+                        background: $primary-color;
+                        border: 0px solid #fff;
+                        border-radius: 50%;
+                        transition: 0.3s;
+                        z-index: 2;
+                    }
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        top: 50%;
+                        left: 0;
+                        transform: translate(-50%, -50%);
+                        margin: 0 0 0 -27px;
+                        width: 0;
+                        height: 0;
+                        background: $light-color;
+                        border-radius: 50%;
+                        opacity: 0;
+                        transition: 0.5s;
+                    }
+
+                    &.on {
+                        color: $primary-color;
+
+                        &::before {
+                            border: 1px solid #fff;
+                        }
+
+                        &::after {
+                            width: 26px;
+                            height: 26px;
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+
+            .tab_slide {
+                overflow: hidden;
+
+                .itm {
+                    display: flex;
+                    justify-content: space-between;
+
+                    .left {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 30px;
+                        width: 590px;
+                        margin: 0 0 0 80px;
+
+                        strong {
+                            display: block;
+                            @include jua();
+                            font-size: 36px;
+                            font-weight: 500;
+                            margin: 0 0 4px 0;
+                        }
+
+                        p {
+                            line-height: 1.5;
+                            margin: 0 0 4px 0;
+                        }
+
+                        .icon {
+                            display: flex;
+                            align-items: center;
+
+                            h3 {
+                                font-size: 20px;
+                                line-height: 1.5;
+                                @include jua();
+                            }
+
+                            p {
+                                margin: 0;
+                            }
+
+                            figure {
+                                margin: 0 24px 0 0;
+                            }
+                        }
+                    }
+
+                    .right {
+                        img {
+                            width: 600px;
+                            border-radius: 25px;
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+}

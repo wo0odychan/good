@@ -27,10 +27,17 @@ body {
     gap: 30px;
 }
 
-.nt {
-    font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
-}
+.btn {
+    display: inline-block;
+    background: $primary-color;
+    padding: 12px 26px;
+    border-radius: 35px;
 
-.pt {
-    font-family: 'Jua', sans-serif;
+    &.g {
+        background: $secondary-color;
+    }
+
+    &.p {
+        background: $tertiary-color;
+    }
 }
